@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+   
+          <meta charset="UTF-8"/>
+          <meta name="viewport" content="width=device-width ,initial-scale=1.0" />
+          <title>Convert</title>
+        
+        <style>
+            #app{
+               
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            h1{
+                font-family: cursive;
+                margin-bottom: 100px;
+            }
+            
+            input{
+                width: 400px;
+                height: 30px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            
+        </style>
+        
+        
+        
+    </head>
+    
+    
+    <body>
+        
+        
+        <div id="app">
+            <h1>Convert Celsius To Fahrenheit</h1>
+            
+             <label>Celsius</label>
+            <input type="number" v-model="celsius">
+            <label>Fahrenheit</label>
+            <input type="number" v-model="fahrenheit">
+          
+    
+        </div>
+    
+   <!--  <script src="vue.js"></script>-->
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>   
+        
+    <script>
+        
+        
+         var inst1 =  new Vue(
+       {
+            el:"#app",
+            
+            data:{
+                celsius :null,
+                fahrenheit:null,
+             
+            },
+           methods :{
+                
+                },
+                
+           watch:{
+               
+               celsius:function(e){
+                   this.celsius =parseFloat(e);
+                   theCel = (parseFloat(e) * 9/5) + 32;
+                   this.fahrenheit = theCel.toFixed(1);
+                   
+                   
+               },
+               
+               fahrenheit:function(e){
+                    this.fahrenheit =parseFloat(e);
+                    theFah = (parseFloat(e)-32)* 5/9;
+                    this.celsius =theFah.toFixed(2);
+                   
+                   
+               }
+               
+               
+           }
+                
+                
+           
+                
+           
+           
+            })
+        
+    </script>
+     </body>
+</html>
